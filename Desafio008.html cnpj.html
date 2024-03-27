@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index.html</title>
+
+    <script>
+        function main() {
+            //cnpj="11111111000191";
+            cnpj=prompt("Digite o CNPJ:");
+            soma=0;
+            n=5;
+            for(i=0;i<cnpj.length;i++) {
+                if(i<12){
+                    if((n-i)==1){
+                        n=13
+                    }
+                soma+= (n-i)*parseInt(cnpj[i]);
+                }
+            }
+            console.log(soma)
+            dv1=11-(soma%11)
+            if(dv1>9){
+                dv1=0
+            }
+
+          
+            console.log(dv1);
+            if(parseInt(cnpj[12])!=dv1) {
+                alert("cnpj inválido");
+            }
+            else {
+                alert("Primeiro digito do cnpj OK!");
+                soma=0;
+                n=6;
+                for(i=0;i<cnpj.length;i++) {
+                    if((n-i)==1){
+                        n=14;
+                    }
+                    if(i<13) {
+                        soma+=(n-i)*parseInt(cnpj[i]);
+                   
+                    }
+
+                }
+
+            }
+            console.log(soma);
+            dv2=11-(soma%11);
+            if(dv2>9){
+                dv2=0;
+            }
+            console.log(dv2);
+
+            if(dv2!=parseInt(cnpj[13])){
+                alert("cnpj inválido");
+            }
+            else{
+                alert("cnpj válido!");
+            }
+
+
+            }
+    
+            
+        
+        
+
+    </script>
+</head>
+<body onload="main()">
+</body>
+</html>

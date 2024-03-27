@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index.html</title>
+
+    <script>
+        function main() {
+            data=parseInt(prompt("Digite data como aaaammdd ")); 
+            a=parseInt(data/10000);
+            m=parseInt(data%10000/100);
+            d= parseInt(data%100)
+            console.log(d+"/"+m+"/"+a);
+            if (m<=9) {
+                if(d<=9){
+                    console.log("0"+d+"/0"+m+"/"+a)
+                }
+                else{
+                    console.log(d+"/0"+m+"/"+a)
+                }
+            }
+            else {
+                if(d<=9){
+                    console.log("0"+d+"/"+m+"/"+a);
+                }
+                console.log(d+"/"+m+"/"+a)
+
+            }
+        }
+        
+
+    </script>
+</head>
+<body onload="main()">
+</body>
+</html>
